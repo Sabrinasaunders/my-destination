@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class TravelPost extends Model {}
 
-Project.init(
+TravelPost.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -44,4 +44,4 @@ Project.init(
   }
 );
 
-module.exports = Project;
+module.exports = TravelPost;
