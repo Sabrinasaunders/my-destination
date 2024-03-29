@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Jessica Hopper",
+    "location_map": "Paris",
+    "description": "I loved my trip to Paris! The best part was climbing the Eiffel Tower, and don't get me started about how amazing the food is!"
+    
+  },
+  {
+    "name": "Larry Geary",
+    "location_map": "Thailand",
+    "description": "If you are looking for gorgeous scenery without burning a hole in your wallet, Thailand is the place to go! Bartering for goods was such an amazing experience! I got an a amazing massage for only $5!!"
+   
+  },
+  {
+    "name": "Sarah Bell",
+    "location_map": "South Africa",
+    "description": "Adventure is out there! South Africa was one of my favorite places to visit; the wild coast! You can go on a safari or horse backpacking trip and ride on the most beautiful beaches!"
+   
+  }
+]
