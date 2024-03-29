@@ -6,20 +6,20 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Travel Post:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-travelpost-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="travelpost-name">travelpost name:</label>
+        <input class="form-input" type="text" id="travelpost-name" name="travelpost-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="travelpost-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="travelpost-funding" name="travelpost-funding" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="travelpost-desc">description:</label>
+        <textarea class="form-input" id="travelpost-desc" name="travelpost-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +27,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if TravelPosts.length}}
+  <div class="col-md-6 travelpost-list">
+    <h3>Current Travel Post:</h3>
 
-    {{#each projects as |project|}}
+    {{#each TravelPosts as |travelpost|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/travelpost/{{TravelPost.id}}">{{TravelPost.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{TravelPost.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
