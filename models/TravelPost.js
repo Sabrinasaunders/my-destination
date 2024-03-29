@@ -23,9 +23,16 @@ TravelPost.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    //TODO change the needed_funding to the maps from google api
+    // needed_funding: {
+    //   type: DataTypes.FLOAT,
+    //   allowNull: false,
+    // },
+    location_map: {
+      type: DataTypes.STRING,
       allowNull: false,
+
+
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,7 +47,7 @@ TravelPost.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'TravelPost',
   }
 );
 
