@@ -10,16 +10,18 @@
 
     <form class="form new-travelpost-form">
       <div class="form-group">
-        <label for="travelpost-name">travelpost name:</label>
-        <input class="form-input" type="text" id="travelpost-name" name="travelpost-name" />
+        <label for="post-name">post name:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
       </div>
+
       <div class="form-group">
-        <label for="travelpost-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="travelpost-funding" name="travelpost-funding" />
+        <label for="post-location-map">Location Map (type or place):</label>
+        <input class="form-input" type="text" id="post-location-map" name="post-location-map" />
       </div>
+
       <div class="form-group">
-        <label for="travelpost-desc">description:</label>
-        <textarea class="form-input" id="travelpost-desc" name="travelpost-desc"></textarea>
+        <label for="post-desc">description:</label>
+        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +29,17 @@
     </form>
   </div>
 
-  {{#if TravelPosts.length}}
-  <div class="col-md-6 travelpost-list">
+  {{#if Posts.length}}
+  <div class="col-md-6 post-list">
     <h3>Current Travel Post:</h3>
 
-    {{#each TravelPosts as |travelpost|}}
+    {{#each Posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/travelpost/{{TravelPost.id}}">{{TravelPost.name}}</a></h4>
+        <h4><a href="/post/{{Post.id}}">{{Post.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{TravelPost.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{Post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

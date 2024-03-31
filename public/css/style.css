@@ -1,4 +1,5 @@
-header, .TravelPost:not(:last-child) {
+header,
+.Post:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -17,8 +18,17 @@ header, .TravelPost:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
+.location-map {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+gmp-map {
+  height: 100%;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
 }
