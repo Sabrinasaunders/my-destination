@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Travel Post!</title>
+  <title>My Destination!</title>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdUrkM3ae9iawTxBd9MsZWnIaIsSa0fk&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,8 +16,8 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Travel Post!</a>
+        <span role="img" aria-label="globe showing world">🌎</span>
+        <a href="/">My Destination!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -29,9 +32,27 @@
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      <gmp-map center="40.12150192260742,-100.45039367675781" zoom="4" map-id="DEMO_MAP_ID">
+        <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
+      </gmp-map>
+      <div id="map" style="height: 400px; width: 100%;"></div>
+      <script>
+        function initMap() {
+          var myLocation = { lat: 40.1215, lng: -100.4504 };
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: myLocation
+          });
+          var marker = new google.maps.Marker({
+            position: myLocation,
+            map: map,
+            title: 'My location'
+          });
+        }
+      </script>
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
