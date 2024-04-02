@@ -21,6 +21,16 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   },
+  {
+    "name": "multer-cloudinary",
+    "version": "1.0.0",
+    "description": "An example for connecting Multer and Cloudinary",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "watch": "nodemon server.js"
+    },
   "devDependencies": {
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
