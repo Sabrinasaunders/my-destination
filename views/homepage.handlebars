@@ -4,21 +4,25 @@
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/Post/{{post.id}}">{{post.name}}</a>
+  {{!-- {{{get_emoji category}}} --}}
+
+      {{{get_emoji "travel"}}} 
+      {{{get_emoji "blogpost"}}} 
+      {{!-- {{{get_emoji "map"}}}  --}}
+      {{{get_emoji "pictures"}}} 
+      
+      <a href="/post/{{post.id}}">{{post.name}}</a>
     </h2>
     <p>
-      <span role="img" aria-label="airplane around the world">🌍✈️</span>
-      <!-- Pass location_map value to the helper function -->
-      <span class="map-info">{{get_map_info post.latitude post.longitude}}</span>
-      needed!
+      Explore on <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>
     </p>
     <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
-  </div>
+    </div>
   <div class="col-md-7">
     <p>
       {{post.description}}
     </p>
   </div>
-</div>
-{{/each}}
+  
+  {{/each}}
+
