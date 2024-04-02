@@ -8,6 +8,16 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
+  {
+    "name": "multer-cloudinary",
+    "version": "1.0.0",
+    "description": "An example for connecting Multer and Cloudinary",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "watch": "nodemon server.js"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",

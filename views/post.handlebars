@@ -7,7 +7,19 @@
     <span role="img" aria-label="destination">🗺️</span>
     Destination: <span class="destination-details">{{destination_map}}</span>
   </p>
- 
+  <form id="image-uploader">
+            <div class="mb-3">
+              <label for="imageFile" class="form-label">Image upload</label>
+              <input class="form-control" type="file" id="imageFile" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="row mt-5">
+          <div id="image-placeholder" class="col-12 col-md-4 offset-md-4"></div>
+      <a href="/post/{{post.id}}">{{post.name}}</a>
+    </h2>
+    <p>
   <p>
     <button class="btn btn-primary">Check out this Travel Post!</button>
   </p>
