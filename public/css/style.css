@@ -1,34 +1,113 @@
+/* Base styling for headers and post items, excluding the last child for a cleaner look */
+:root {
+  --primary: #708090;
+  --secondary: #000000;
+  --pop: #F5F5F5;
+}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
 header,
 .Post:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc17;
+
+  /* Adds spacing at the bottom */
+  margin-bottom: 20px;
+  /* Separates elements visually */
+  background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    
 }
 
+/* Button-like styles for clickable elements that are not buttons */
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
   color: #1b89bc;
+  /* Primary interactive color */
   text-decoration: none;
-  font-size: 100%;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  /* Smooth color transition on hover/focus */
 }
 
-.no-button:hover {
+.no-button:hover,
+.no-button:focus {
+  /* Accessibility: focus state alongside hover */
   color: #065b83;
   text-decoration: underline;
+  outline: none;
+  /* Removes default focus outline */
 }
 
+/* Styling for location indicators or map-related information */
 .location-map {
   color: #056605;
+  /* Green color for location-related text */
   font-weight: bold;
-  margin-left: -5px;
+  margin-left: 5px;
+  /* Adjusted alignment */
 }
 
-gmp-map {
-  height: 100%;
-}
-
+/* Styles for the OpenStreetMap container */
 #map {
   height: 400px;
   width: 100%;
+  border-radius: 8px;
+  /* Softens edges with rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+/* Layout and typography improvements */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  /* Clean and modern font */
+  line-height: 1.6;
+  /* Enhances text readability */
+  color: #333;
+  /* Softer than black for reduced eye strain */
+ 
+  background-image: "https: //t4.ftcdn.net/jpg/00/65/48/25/360_F_65482539_C0ZozE5gUjCafz7Xq98WB4dW6LAhqKfs.jpg";
+}
+
+.container {
+  max-width: 1200px;
+  /* Optimizes reading line length */
+  margin: 0 auto;
+  /* Centers content within the viewport */
+  padding: 0 20px;
+  /* Adds padding on smaller screens or narrow viewports */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #333;
+  /* Consistent color for headings */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+
+  .no-button,
+  .location-map {
+    font-size: 90%;
+    /* Slightly reduces font size for compactness */
+  }
+
+  #map {
+    height: 300px;
+    /* Adjusts map height for mobile displays */
+  }
 }

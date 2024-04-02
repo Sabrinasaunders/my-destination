@@ -1,17 +1,17 @@
 [
   {
     "name": "Travel Chronicles",
-    "location_map": "Global",
+    "location_map": "40.7128,-74.0060", 
     "description": "Travel Chronicles is a dynamic mobile app crafted for the global traveler and adventure seeker. This platform offers an engaging space for users to share and explore a mosaic of travel experiences through vivid photographs and compelling blog posts"
   },
   {
     "name": "BlogPost",
-    "location_map": "Worldwide",
+    "location_map": "51.5074,-0.1278",
     "description": "BlogPost is a cutting-edge platform designed to empower writers, travelers, and enthusiasts from across the globe to share their stories, insights, and discoveries."
   },
   {
     "name": "Pictures",
-    "location_map": "GlobalCanvas",
+    "location_map": "48.8566,2.3522",
     "description": "Pictures is a revolutionary mobile app designed to capture and share the beauty of moments from around the world. It's a platform where photography meets community, allowing users from all corners of the globe to share their snapshots of life. "
   }
 ]

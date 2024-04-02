@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Destination!</title>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=API Key&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -20,45 +22,33 @@
         <a href="/">My Destination!</a>
       </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/profile">Profile</a> |
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
       {{{ body }}}
-      <gmp-map center="40.12150192260742,-100.45039367675781" zoom="4" map-id="DEMO_MAP_ID">
-        <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
-      </gmp-map>
-      <div id="map" style="height: 400px; width: 100%;"></div>
-      <script>
-        function initMap() {
-          var myLocation = { lat: 40.1215, lng: -100.4504 };
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: myLocation
-          });
-          var marker = new google.maps.Marker({
-            position: myLocation,
-            map: map,
-            title: 'My location'
-          });
-        }
-      </script>
     </main>
     <footer>
-
+      <!-- Footer content -->
     </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
+  <!-- Conditional scripts for logged-in users -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Custom Map Initialization Script -->
+  {{#if page_requires_map}}
+  <script src="/js/map.js"></script>
   {{/if}}
 </body>
 

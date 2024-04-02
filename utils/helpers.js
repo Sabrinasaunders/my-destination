@@ -3,18 +3,17 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
-  get_emoji: () => {
-    const randomNum = Math.random();
-    // Return a random emoji related to travel, blog post, and map
-    if (randomNum > 0.7) {
-      return `<span role="img" aria-label="airplane">✈️</span>`; // Represents travel
-    } else if (randomNum > 0.4) {
-      return `<span role="img" aria-label="memo">📝</span>`; // Represents a blog post
-    } else {
-      return `<span role="img" aria-label="world map">🗺️</span>`; // Represents a map
-    }
+  get_emoji: (category) => {
+    const emojiMap = {
+      travel: `<span role="img" aria-label="airplane">✈️</span>`,
+      blogpost: `<span role="img" aria-label="memo">📝</span>`,
+      pictures: `<span role="img" aria-label="camera">📷</span>`,
+    };
+    return emojiMap[category] || ""; // Return the emoji or an empty string if the category is not found
   },
   get_map_info: (latitude, longitude) => {
-    return `Latitude: ${latitude}, Longitude: ${longitude}`;
+    // Construct an OpenStreetMap URL for a static map image
+    const mapImageUrl = `https://staticmap.openstreetmap.de/staticmap.php?center=${latitude},${longitude}&zoom=15&size=600x300&maptype=mapnik&markers=${latitude},${longitude},lightblue1`;
+    return `<img src="${mapImageUrl}" alt="Map of Location" />`;
   },
 };
