@@ -30,7 +30,7 @@ Post.init(
     // },
     location_map: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
 
 
     },
