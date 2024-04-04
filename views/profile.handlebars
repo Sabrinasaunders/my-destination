@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <h3>Create a New Travel Post:</h3>
 
-    <form class="form new-post-form">
+    <form class="form" id="new-post-form">
       <div class="form-group">
         <label for="post-name">post name:</label>
         <input class="form-input" type="text" id="post-name" name="post-name" />
@@ -17,7 +17,7 @@
       <div class="form-group">
         <label for="post-location-map">Location Map (type or place):</label>
         <input class="form-input" type="text" id="post-location-map" name="post-location-map" />
-      <form id="location-form" action="/submit-location" method="POST"></form>
+      {{!-- <form id="location-form" action="/submit-location" method="POST"></form> --}}
       <input type="hidden" id="latitude" name="latitude">
       <input type="hidden" id="longitude" name="longitude">
       
@@ -52,14 +52,15 @@
   <div class="row mt-4">
     <div class="col-md-6">
       <h3>Submit a Blog Post:</h3>
-      <form id="blogpost-form" method="POST" action="/api/blogposts">
+      <form id="blogpost-form">
+      {{!-- method="POST" action="/api/blogposts"> --}}
         <div class="form-group">
           <label for="title">Title:</label>
-          <input type="text" id="title" name="title" placeholder="Title" class="form-input">
+          <input type="text" id="title" name="title" placeholder="Title" class="post-name">
         </div>
         <div class="form-group">
           <label for="content">Content:</label>
-          <textarea id="content" name="content" placeholder="Write your blog post here..." class="form-input"></textarea>
+          <textarea id="content" name="content" placeholder="Write your blog post here..." class="post-desc"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit Blog Post</button>
       </form>

@@ -1,17 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const newPostForm = document.querySelector(".new-post-form");
+// document.addEventListener("DOMContentLoaded", () => {
+  const newPostForm = document.querySelector("#blogpost-form");
   if (newPostForm) {
     newPostForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-
-      const name = document.querySelector("#Post-name").value.trim();
-      const location_map = document.querySelector("#Post-map").value.trim();
-      const description = document.querySelector("#Post-desc").value.trim();
-
-      if (name && location_map && description) {
-        const response = await fetch(`/api/Posts`, {
+      console.log("Hello!");
+      const name = document.querySelector(".post-name").value.trim();
+      // const location_map = document.querySelector("#post-location-map").value.trim();
+      const description = document.querySelector(".post-desc").value.trim();
+console.log(name, description);
+      if (name && description) {
+        // location_map &&
+        const response = await fetch(`/api/post`, {
           method: "POST",
-          body: JSON.stringify({ name, location_map, description }),
+          body: JSON.stringify({ name, description }),
           headers: { "Content-Type": "application/json" },
         });
 
@@ -42,4 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
+// });
