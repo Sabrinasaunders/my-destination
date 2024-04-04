@@ -2,12 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialPosition = [51.505, -0.09];
 
   // Initialize the map on the "mapid" div with a given center and zoom level
-  const map = L.map("mapid").setView(initialPosition, 13);
+  var map = L.map("map").setView([51.505, -0.09], 13);
 
   // Add an OpenStreetMap tile layer to the map
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap contributors",
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
+
+  L.marker([51.5, -0.09])
+    .addTo(map)
+    .bindPopup("A pretty CSS popup.<br> Easily customizable.")
+    .openPopup();
 
   // Create a marker that can be moved, initially placed at the same position as the map's center
   let marker = L.marker(initialPosition, {
