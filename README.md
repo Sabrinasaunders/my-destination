@@ -1,13 +1,4 @@
-# My Destination 
 
-## Project Description
-
-We wanted an app where we could post what experiences we had while traveling and to gain inspiration from other travels, thus we wanted to develop a social media app specific to traveling.
-
-## User Story
-AS A Traveler 
-I WANT an application that can share my travel experiences 
-SO THAT I’m connected to the travel community
 
 ## Contents
 
@@ -59,5 +50,6 @@ We all worked on/helped with mostly everything in the project; Meera & Sabrina f
 ## License
 
 This project utilizes the standard MIT License.
+
 
 
